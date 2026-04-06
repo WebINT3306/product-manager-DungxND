@@ -70,16 +70,15 @@
             tbody.innerHTML = "";
 
             data.forEach((item, index) => {
-                const row = `
-                    <tr>
+                const row = document.createElement("tr");
+                row.innerHTML = `
                         <td>${index + 1}</td>
                         <td>${item.name}</td>
                         <td>${item.category}</td>
                         <td>${item.price.toLocaleString()}</td>
                         <td>${item.quantity}</td>
-                    </tr>
-                `;
-                tbody.innerHTML += row;
+                    `;
+                tbody.appendChild(row);
             });
         }
 
